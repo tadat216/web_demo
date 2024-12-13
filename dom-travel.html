@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Travel</title>
+  <link href="./static/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="./static/codemirror.min.css">
+  <link rel="stylesheet" href="./static/main.css">
+</head>
+
+<body class="bg-blue-100 p-6">
+
+  <div style="display: grid; gap: 16px; grid-template-columns: 1fr 1fr;">
+    <div id = "html-input-container">
+      <h2 class="text-2xl font-bold">HTML</h2>
+      <textarea id="htmlInput" class="editor" rows="10" cols="100" placeholder="Nhập mã HTML cho body ở đây..."></textarea>
+    </div>
+
+    <div>
+      <h2 class="text-2xl font-bold">DOM Tree</h2>
+      <div id="domOutput" style="font-family: monospace; height: 600px; overflow-y: scroll;"></div>
+    </div>
+  </div>
+  <button id="traverseButton">Duyệt DOM</button>
+
+  <script src="./static/dom-travel.js"></script>
+  <script src="./static/main.js"></script>
+  <script src="./static/codemirror.min.js"></script>
+  <script src="./static/xml.min.js"></script>
+  <script>
+    const htmlInputContainer = document.getElementById('html-input-container');
+    const editor = CodeMirror.fromTextArea(document.getElementById('htmlInput'), {
+      mode: 'xml',
+      lineNumbers: true,
+      theme: 'default',
+    });
+    editor.setSize(htmlInputContainer.clientWidth, 600);
+    domOutput = document.getElementById('domOutput');
+    document.getElementById('traverseButton').addEventListener('click', () => {
+      domOutput.innerHTML = "";
+      const htmlInput = editor.getValue(); // Lấy giá trị từ CodeMirror
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlInput, 'text/html');
+      traverseDOM(0, doc.body, false);
+    });
+  </script>
+</body>
+
+</html>
