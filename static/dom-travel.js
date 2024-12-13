@@ -28,10 +28,14 @@ function traverseDOM(depth=0, element, is_last) {
   }
 }
 
-function showDomOutput() {
-  Array.from(domOutput.children).forEach((child, index) => {
-    setTimeout(() => {
-      child.classList.remove('hidden');
-    }, index * 150);
-  });
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function showDomOutput() {
+  const speed = document.getElementById('speed-selector').value;
+  for (const [index, child] of Array.from(domOutput.children).entries()) {
+    child.classList.remove('hidden');
+    await delay(index * 250 / speed);
+  }
 }

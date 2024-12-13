@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Page</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Welcome!</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>Article Title</h2>
+        <p>This is the content.</p>
+      </article>
+    </main>
+  </body>
+</html>
