@@ -12,44 +12,35 @@
     <script src="./static/xml.min.js"></script>
 </head>
 
-<body class="bg-blue-100 p-6">
+<body class="p-6">
 
-    <div class="grid grid-cols-12">
-        <aside class="col-span-2">
-            <ul class="space-y-2 bg-white p-4 top-0 left-0 h-full fixed w-64">
-                <li><a href="#section1" class="text-blue-500 hover:underline">Section 1</a></li>
-                <li><a href="#section2" class="text-blue-500 hover:underline">Section 2</a></li>
-            </ul>
-        </aside>
-        <div class="col-span-10 pl-4">
-            <h1 class="text-2xl font-bold mb-4">
-                Navigation
-                <button class="expand-collapse-btn text-blue-500 focus:outline-none">+</button>
-            </h1>
-            
-            <div class="content-expand-collapse hidden">
-                <p class="mb-4 text-lg">Thường được kết hợp giữa <code>list</code> và <code>link</code></p>
-                <h2 class="text-xl font-bold mb-4">Sidebar để đi đến section với <code>id</code></h2>
-                <div class="mx-auto mb-4">
-                    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="gbYLOje" data-pen-title="Link id" data-editable="true" data-user="pvotfthe-the-reactor" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                        <span>See the Pen <a href="https://codepen.io/pvotfthe-the-reactor/pen/gbYLOje">
-                        Link id</a> by Đạt Tạ (<a href="https://codepen.io/pvotfthe-the-reactor">@pvotfthe-the-reactor</a>)
-                        on <a href="https://codepen.io">CodePen</a>.</span>
-                    </p>
-                </div>
-
-                <h2 class="text-xl font-bold mb-4">Navigation cho thanh điều hướng chính trong các trang web</h2>
-                <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="gbYLbgZ" data-pen-title="Navbar example" data-editable="true" data-user="pvotfthe-the-reactor" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                    <span>See the Pen <a href="https://codepen.io/pvotfthe-the-reactor/pen/gbYLbgZ">
-                    Navbar example</a> by Đạt Tạ (<a href="https://codepen.io/pvotfthe-the-reactor">@pvotfthe-the-reactor</a>)
-                    on <a href="https://codepen.io">CodePen</a>.</span>
-                </p>
+    <main class="grid grid-cols-12 bg-slate-300">
+        <nav class="flex flex-wrap justify-between items-center p-4 fixed top-0 left-0 w-full mx-auto">
+            <div class="logo">
+                <h1 class="text-xl font-bold">WEB DEMO</h1>
             </div>
-        </div>
-    </div>
+            <ul class="flex gap-4 mr-7 text-lg font-medium">
+                <li class="px-4">
+                    <button class="hover:underline" data-dropdown-toggle="html-menu" onclick="toggleDropdown('html-menu')">HTML</button>
+                    <div id="html-menu" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 absolute">
+                        <a href="./dom-travel.html" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">DOM travel</a>
+                        <a href="./html-note.html" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">HTML basic</a>
+                    </div>
+                </li>
+                <li class="px-4"><a href="./css-note.html" class="hover:underline">CSS</a></li>
+                <li class="px-4"><a href="./js-note.html" class="hover:underline">JS</a></li>
+            </ul>
+        </nav>
+    </main>
     <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
     <script src="./static/main.js"></script>
-    <script src="./static/dom-travel.js"></script> 
+    <script src="./static/dom-travel.js"></script>
+    <script>
+        function toggleDropdown(menuId) {
+            const menu = document.getElementById(menuId);
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 
 </html>

@@ -7,36 +7,59 @@
   <title>Dom Travel</title>
   <link href="./static/style.css" rel="stylesheet">
   <link rel="stylesheet" href="./static/codemirror.min.css">
-  <link rel="stylesheet" href="./static/main.css">
 </head>
 
 <body class="bg-blue-100 p-6">
 
-  <div style="display: grid; gap: 16px; grid-template-columns: 1fr 1fr;">
-    <div id = "html-input-container">
-      <h2 class="text-2xl font-bold">HTML</h2>
+  <div class="gap-4 md:grid grid-cols-2">
+    <div id="html-input-container">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-bold flex items-center">
+          HTML
+        </h2>
+        <button id="traverseButton" class="text-green-500 p-2 rounded ml-2" title="run">
+          <svg class="w-4 h-4 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 10 16">
+            <path d="M3.414 1A2 2 0 0 0 0 2.414v11.172A2 2 0 0 0 3.414 15L9 9.414a2 2 0 0 0 0-2.828L3.414 1Z"></path>
+          </svg>
+        </button>
+      </div>
       <textarea id="htmlInput" class="editor" rows="10" cols="100" placeholder="Nhập mã HTML cho body ở đây..."></textarea>
     </div>
 
-    <div>
+    <div id="dom-output-container">
       <h2 class="text-2xl font-bold">DOM Tree</h2>
-      <div id="domOutput" style="font-family: monospace; height: 600px; overflow-y: scroll;"></div>
+      <div id="domOutput" class="bg-white p-4" style="font-family: monospace; height: 600px; overflow-y: scroll; overflow-x: scroll;"></div>
     </div>
   </div>
-  <button id="traverseButton">Duyệt DOM</button>
 
   <script src="./static/dom-travel.js"></script>
   <script src="./static/main.js"></script>
   <script src="./static/codemirror.min.js"></script>
   <script src="./static/xml.min.js"></script>
   <script>
-    const htmlInputContainer = document.getElementById('html-input-container');
+    let htmlInputContainer = document.getElementById('html-input-container');
+    let htmlInput = document.getElementById('htmlInput');
+    let domOutput = document.getElementById('domOutput');
     const editor = CodeMirror.fromTextArea(document.getElementById('htmlInput'), {
       mode: 'xml',
       lineNumbers: true,
       theme: 'default',
     });
-    editor.setSize(htmlInputContainer.clientWidth, 600);
+    //editor.setValue("<h1>Title</h1><p>DOM Travel</p>");
+    function setEditorSize() {
+      let domOutputContainer = document.getElementById('dom-output-container');
+      let domOutput = document.getElementById('domOutput');
+      editor.setSize(domOutputContainer.clientWidth, domOutput.clientHeight);
+    }
+
+    window.addEventListener('load', () => {
+      setEditorSize();
+    });
+
+    window.addEventListener('resize', () => {
+      setEditorSize();
+    });
+    
     domOutput = document.getElementById('domOutput');
     document.getElementById('traverseButton').addEventListener('click', () => {
       domOutput.innerHTML = "";
@@ -44,6 +67,7 @@
       const parser = new DOMParser();
       const doc = parser.parseFromString(htmlInput, 'text/html');
       traverseDOM(0, doc.body, false);
+      showDomOutput();
     });
   </script>
 </body>

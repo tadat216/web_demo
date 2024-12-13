@@ -11,8 +11,6 @@ editors.forEach((editorElement, index) => {
 
     editor.on('change', (instance) => {
         const htmlContent = instance.getValue();
-
-        // Cập nhật nội dung của iframe tương ứng
         const doc = renderOutputs[index].contentDocument || renderOutputs[index].contentWindow.document;
         doc.open();
         doc.write(htmlContent);
