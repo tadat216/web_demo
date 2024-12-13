@@ -20,7 +20,7 @@ function traverseDOM(depth=0, element, is_last) {
   space = "<span style='color: gray;'>" + space + "</span>";
   text = space + "<span style='color: green;'>" + element.tagName.toLowerCase() + "</span>";
   
-  if(element.className) text += '<span style="color: blue;">.' + element.className + '</span>';
+  if(element.className) text += '<span style="color: blue;" class="hidden class-name">.' + element.className + '</span>';
   const elementHTML = '<p style="line-height: 1.23;" class="hidden">' + text + '</p>';
   domOutput.innerHTML += elementHTML;
   for (let child of element.children) {
@@ -34,8 +34,16 @@ function delay(ms) {
 
 async function showDomOutput() {
   const speed = document.getElementById('speed-selector').value;
+  const showClass = document.getElementById('showClassCheckbox').checked;
+  console.log(showClass);
+  await delay(500/speed);
   for (const [index, child] of Array.from(domOutput.children).entries()) {
     child.classList.remove('hidden');
-    await delay(index * 250 / speed);
+    className = child.querySelector('.class-name');
+    if(showClass && className) {
+      await delay(750 / speed);
+      className.classList.remove('hidden');
+    }
+    await delay(750 / speed);
   }
 }
