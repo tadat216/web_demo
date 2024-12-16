@@ -1,11 +1,11 @@
 domOutput = document.getElementById('domOutput');
 
-function traverseDOM(depth=0, element, is_last) {
+function traverseDOM(depth=0, element, rootElement) {
   let space = "";
   if(depth > 0) {
     let parent = element.parentNode;
     check = "";
-    while (parent && parent.tagName != "BODY") {
+    while (parent && parent.tagName != rootElement) {
       if(parent.nextElementSibling) check += "1";
       else check += "0";
       parent = parent.parentNode;
@@ -21,6 +21,9 @@ function traverseDOM(depth=0, element, is_last) {
   text = space + "<span style='color: green;'>" + element.tagName.toLowerCase() + "</span>";
   
   if(element.className) text += '<span style="color: blue;" class="hidden class-name">.' + element.className + '</span>';
+  // if(element.attributes) {
+  //   text += '<span style="color: blue;" class="hidden class-name">.' + element.attributes.length + '</span>';
+  // }
   const elementHTML = '<p style="line-height: 1.23;" class="hidden">' + text + '</p>';
   domOutput.innerHTML += elementHTML;
   for (let child of element.children) {

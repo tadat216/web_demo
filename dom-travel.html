@@ -7,44 +7,41 @@
   <title>Dom Travel</title>
   <link href="./static/style.css" rel="stylesheet">
   <link rel="stylesheet" href="./static/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body class="bg-blue-100 p-6">
 
-  <div class="gap-4 md:grid grid-cols-2">
+  <div class="gap-4 md:grid lg:grid-cols-2">
     <div id="html-input-container">
       <div>
 
         <div class="flex items-center mb-2">
           <h2 class="text-2xl font-bold flex items-center">HTML code</h2>
-
-          <button id="traverseButton" class="text-green-500 p-2 rounded ml-2 " title="run">
-            <svg class="w-4 h-4 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 10 16">
-              <path d="M3.414 1A2 2 0 0 0 0 2.414v11.172A2 2 0 0 0 3.414 15L9 9.414a2 2 0 0 0 0-2.828L3.414 1Z"></path>
-            </svg>
-          </button>
-          <select name="speed-selector" id="speed-selector">
-            <option value="0.25">&times;0.25</option>
-            <option value="0.5">&times;0.5</option>
-            <option value="0.75">&times;0.75</option>
-            <option value="1" selected>&times;1</option>
-            <option value="1.5">&times;1.5</option>
-            <option value="2">&times;2</option>
-            <option value="4">&times;4</option>
-            <option value="8">&times;8</option>
-          </select>
         </div>
 
         <textarea id="htmlInput" class="editor" rows="10" cols="100" placeholder="Nhập mã HTML cho body ở đây..."></textarea>
       </div>
     </div>
     <div id="dom-output-container">
-      <div class="flex items-end gap-2 mb-2">
+      <div class="flex items-center gap-2 mb-2">
         <h2 class="text-2xl font-bold">DOM Tree</h2>
-        <label for="showClassCheckbox" class="checkbox-label border-2 border-blue-500 rounded-md px-2">
+        <button id="traverseButton" class="text-green-500 rounded " title="run">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <select name="speed-selector" id="speed-selector" class="md:text-sm lg:text-lg">
+          <option value="0.25">&times;0.25</option>
+          <option value="0.5">&times;0.5</option>
+          <option value="0.75">&times;0.75</option>
+          <option value="1" selected>&times;1</option>
+          <option value="1.5">&times;1.5</option>
+          <option value="2">&times;2</option>
+          <option value="4">&times;4</option>
+          <option value="8">&times;8</option>
+        </select>
+        <label for="showClassCheckbox" class="checkbox-label border-2 border-blue-500 rounded-md px-2 font-medium sm:text-sm lg:text-lg">
           <input type="checkbox" id="showClassCheckbox" checked hidden>
-          Show class
+          Class
         </label>
       </div>
       <div id="domOutput" class="bg-white p-4"
@@ -94,8 +91,10 @@
       const htmlInput = editor.getValue(); // Lấy giá trị từ CodeMirror
       const parser = new DOMParser();
       const doc = parser.parseFromString(htmlInput, 'text/html');
-      traverseDOM(0, doc.body, false);
+      rootElement = doc.documentElement.tagName;
+      traverseDOM(0, doc.documentElement, rootElement);
       showDomOutput();
+      
     });
 
     document.querySelectorAll('.checkbox-label').forEach(checkboxLabel => {
