@@ -694,6 +694,14 @@ video {
   height: 100vh;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
 .w-44 {
   width: 11rem;
 }
@@ -704,14 +712,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
-.w-16 {
-  width: 4rem;
 }
 
 .flex-1 {
