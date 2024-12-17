@@ -27,237 +27,295 @@
     </aside>
     <main class="p-4 ml-64 flex-col">
       <!-- The cascade -->
-      <h1 class="text-2xl font-bold mb-4" id="the-cascade">The cascade</h1>
-      <p class="mb-4">CSS là ghi tắt của Cascading Style Sheets. Nó là một ngôn ngữ được sử dụng để mô tả cách các phần
-        tử HTML được hiển thị trên màn hình.</p>
-      <p class="mb-4">Cascading (dịch: xếp tầng) là quá trình mà các thuộc tính CSS được áp dụng cho các phần tử HTML.
-        Nó xác định kiểu nào sẽ được ưu tiên cho element khi có nhiều quy tắc xung đột.</p>
+      <details class="mb-4" open>
+        <summary class="text-2xl font-bold mb-4" id="the-cascade">The cascade</summary>
+        <p class="mb-4">CSS là ghi tắt của Cascading Style Sheets. Nó là một ngôn ngữ được sử dụng để mô tả cách các
+          phần
+          tử HTML được hiển thị trên màn hình.</p>
+        <p class="mb-4">Cascading (dịch: xếp tầng) là quá trình mà các thuộc tính CSS được áp dụng cho các phần tử HTML.
+          Nó xác định kiểu nào sẽ được ưu tiên cho element khi có nhiều quy tắc xung đột.</p>
 
-      <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="css,result" data-slug-hash="bNbgdKB"
-        data-pen-title="cascade example" data-preview="true" data-editable="true" data-user="pvotfthe-the-reactor"
-        style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-        <span>See the Pen <a href="https://codepen.io/pvotfthe-the-reactor/pen/bNbgdKB">
-            cascade example</a> by Đạt Tạ (<a href="https://codepen.io/pvotfthe-the-reactor">@pvotfthe-the-reactor</a>)
-          on <a href="https://codepen.io">CodePen</a>.</span>
-      </p>
-      <hr class="my-4 border-gray-300">
+        <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="css,result"
+          data-slug-hash="bNbgdKB" data-pen-title="cascade example" data-preview="true" data-editable="true"
+          data-user="pvotfthe-the-reactor"
+          style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/pvotfthe-the-reactor/pen/bNbgdKB">
+              cascade example</a> by Đạt Tạ (<a
+              href="https://codepen.io/pvotfthe-the-reactor">@pvotfthe-the-reactor</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <hr class="my-4 border-gray-300">
+      </details>
       <!-- Position -->
-      <h1 class="text-2xl font-bold mb-4" id="position">Position</h1>
-      <p class="mb-4">Position là thuộc tính CSS được sử dụng để xác định vị trí của một phần tử trong trang web.</p>
-      <p class="mb-4">Có 5 giá trị của position:</p>
-      <ul class="list-none mb-4">
-        <li>static (default): Hiển thị theo thứ tự.</li>
-        <li>relative: Vị trí tương đối so với vị trí ban đầu của element.</li>
-        <li>absolute: Vị trí tương đối so với element có <code>position: relative</code> cha gần nhất, nếu không có thì
-          lấy phần tử root <code>html</code> làm cha.</li>
-        <li>fixed: Vị trí tương đối so với viewport, cố định khi scroll.</li>
-        <li>sticky: Sự kết hợp giữa absolute và fixed. Cố định theo cha gần nhất.</li>
-      </ul>
+      <details class="mb-4" open>
+        <summary class="text-2xl font-bold mb-4" id="position">Position</summary>
+        <p class="mb-4">Position là thuộc tính CSS được sử dụng để xác định vị trí của một phần tử trong trang web.</p>
+        <p class="mb-4">Có 5 giá trị của position:</p>
+        <ul class="list-none mb-4">
+          <li>static (default): Hiển thị theo thứ tự.</li>
+          <li>relative: Vị trí tương đối so với vị trí ban đầu của element.</li>
+          <li>absolute: Vị trí tương đối so với element có <code>position: relative</code> cha gần nhất, nếu không có
+            thì
+            lấy phần tử root <code>html</code> làm cha.</li>
+          <li>fixed: Vị trí tương đối so với viewport, cố định khi scroll.</li>
+          <li>sticky: Sự kết hợp giữa absolute và fixed. Cố định theo cha gần nhất.</li>
+        </ul>
 
-      <p class="mb-4">Khi giá trị <code>position</code> khác <code>static</code>, ta sẽ gán giá trị cho các thuộc tính
-        <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> sẽ được sử dụng để xác định vị trí
-        của element.</p>
+        <p class="mb-4">Khi giá trị <code>position</code> khác <code>static</code>, ta sẽ gán giá trị cho các thuộc tính
+          <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> sẽ được sử dụng để xác định vị
+          trí
+          của element.
+        </p>
 
-      <iframe src="./css-position-demo.html" class="w-full h-96 mb-4"></iframe>
-      <hr class="my-4 border-gray-300">
+        <iframe src="./css-position-demo.html" class="w-1/2 h-96 mb-4 mx-auto" ></iframe>
+        <hr class="my-4 border-gray-300">
+      </details>
       <!-- Flexbox -->
-      <h1 class="text-2xl font-bold mb-4" id="flexbox">Flexbox</h1>
-      <p class="mb-4">Là một mô hình bố cục trong CSS được thiết kế để giúp việc sắp xếp và căn chỉnh các phần tử trong
-        một container trở nên dễ dàng và linh hoạt hơn. Flexbox cho phép tạo ra các bố cục phức tạp mà không cần phải sử
-        dụng các thuộc tính float hay positioning truyền thống.</p>
-      <img src="./static/img/flex_terms.png" alt="flexbox terms" class="w-128 h-auto mb-4 mx-auto">
+      <details class="mb-4" open>
+        <summary class="text-2xl font-bold mb-4" id="flexbox">Flexbox</summary>
+        <p class="mb-4">Là một mô hình bố cục trong CSS được thiết kế để giúp việc sắp xếp và căn chỉnh các phần tử
+          trong
+          một container trở nên dễ dàng và linh hoạt hơn. Flexbox cho phép tạo ra các bố cục phức tạp mà không cần phải
+          sử
+          dụng các thuộc tính float hay positioning truyền thống.</p>
+        <img src="./static/img/flex_terms.png" alt="flexbox terms" class="w-128 h-auto mb-4 mx-auto">
 
-      <h2 class="text-xl font-bold mb-4">Flex direction</h2>
-      <p class="mb-4">Xác định hướng các phần tử con trong container.</p>
-      <p class="mb-4">Có 4 giá trị:</p>
-      <ul class="list-disc list-inside mb-4">
-        <li><code>row</code>: Từ trái sang phải.</li>
-        <li><code>row-reverse</code>: Từ phải sang trái.</li>
-        <li><code>column</code>: Từ trên xuống dưới.</li>
-        <li><code>column-reverse</code>: Từ dưới lên trên.</li>
-      </ul>
-      <h2 class="text-xl font-bold mb-4">Justify content</h2>
-      <p class="mb-4">Căn chỉnh flex items theo main axis.</p>
-      <p class="mb-4">Có 6 giá trị:</p>
-      <ul class="list-disc list-inside mb-4">
-        <li><code>flex-start</code>: Căn main start.</li>
-        <li><code>flex-end</code>: Căn main end.</li>
-        <li><code>center</code>: Căn giữa main axis.</li>
-        <li><code>space-between</code>: Căn đều các flex items.</li>
-        <li><code>space-around</code>: Căn đều các flex items. Khoảng cách ở đầu và cuối bằng 1/2 khoảng cách giữa các
-          flex items.</li>
-        <li><code>space-evenly</code>: Căn đều các flex items. Khoảng cách ở đầu và cuối bằng khoảng cách giữa các flex
-          items.</li>
-      </ul>
-      <h2 class="text-xl font-bold mb-4">Align items</h2>
-      <p class="mb-4">Căn chỉnh flex items theo cross axis.</p>
-      <p class="mb-4">Có 5 giá trị:</p>
-      <ul class="list-disc list-inside mb-4">
-        <li><code>stretch</code>: Kéo dài các phần tử con để chiếm toàn bộ chiều cao của container.</li>
-        <li><code>flex-start</code>: Điểm bắt đầu ở cross start.</li>
-        <li><code>flex-end</code>: Điểm kết thúc ở cross end.</li>
-        <li><code>center</code>: Nằm giữa cross start và cross end.</li>
-        <li><code>baseline</code>: Nằm trên đường cơ sở của văn bản.</li>
-      </ul>
-      <h2 class="text-xl font-bold mb-4">Align content</h2>
-      <p class="mb-4"><code>align-content</code> tương tự <code>justify-content</code> nhưng căn theo trục cross axis.
-      </p>
-      <p class="mb-4">Có 5 giá trị:</p>
-      <ul class="list-disc list-inside mb-4">
-        <li><code>stretch</code></li>
-        <li><code>flex-start</code></li>
-        <li><code>flex-end</code></li>
-        <li><code>center</code></li>
-        <li><code>space-around</code></li>
-        <li><code>space-evenly</code></li>
-      </ul>
-      <textarea id="htmlInput" class="editor" rows="10" cols="100" placeholder="Nhập mã HTML cho body ở đây..."></textarea>
-      <div class="flex gap-4">
-        <div class="flex-1 bg-gray-100 h-64 rounded-md p-2 shadow-lg overflow-y-auto">
-          <div class="select-container">
-            <label for="flex-direction-selector" class="font-medium"><code>flex-direction: </code></label>
-            <select name="flex-direction" id="flex-direction-selector" class="mb-4 bg-gray-200 rounded-md p-2">
-              <option value="row">row</option>
-              <option value="row-reverse">row-reverse</option>
-              <option value="column">column</option>
-              <option value="column-reverse">column-reverse</option>
-            </select>
-          </div>
-          <div class="select-container">
-            <label for="justify-content-selector" class="font-medium"><code>justify-content: </code></label>
-            <select name="justify-content" id="justify-content-selector" class="mb-4 bg-gray-200 rounded-md p-2">
-              <option value="flex-start">flex-start</option>
-              <option value="flex-end">flex-end</option>
-              <option value="center">center</option>
-              <option value="space-between">space-between</option>
-              <option value="space-around">space-around</option>
-              <option value="space-evenly">space-evenly</option>
-            </select>
-          </div>
-        </div>
-        <div id="flex-items-demo" class="flex-1 p-4 mb-4 h-64 bg-gray-100 rounded-md shadow-lg self-center">
-          <div class="box-1">1</div>
-          <div class="box-2">2</div>
-          <div class="box-3">3</div>
-        </div>
-      </div>
-      <hr class="my-4 border-gray-300">
-      <!-- Common CSS Properties -->
-      <h1 class="text-2xl font-bold mb-4" id="common-css">Common CSS Properties</h1>
-      <div class="flex gap-2 bg-gray-100 rounded-md shadow-lg">
-        <div class="p-4 flex-1">
-          <h2 class="text-xl font-bold">Property</h2>
-          <p>margin</p>
-        </div>
-        <div class="p-4 flex-1 space-y-4">
-          <h2 class="text-xl font-bold">Custom Element</h2>
-          <div class="bg-gray-200 p-4 border-gray-300" id="custom-element">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur omnis, ipsam alias illum numquam
-              provident molestias vel repellendus laudantium quia natus expedita dolorem vero odio est. Tempore
-              corporis, hic natus itaque nostrum mollitia iste numquam earum error dolorem maiores ad magni blanditiis
-              non? Officiis eum debitis distinctio vitae ducimus. Voluptas!</p>
-          </div>
+        <h2 class="text-xl font-bold mb-4">Flex direction</h2>
+        <p class="mb-4">Xác định hướng các phần tử con trong container.</p>
+        <p class="mb-4">Có 4 giá trị:</p>
+        <ul class="list-disc list-inside mb-4">
+          <li><code>row</code>: Từ trái sang phải.</li>
+          <li><code>row-reverse</code>: Từ phải sang trái.</li>
+          <li><code>column</code>: Từ trên xuống dưới.</li>
+          <li><code>column-reverse</code>: Từ dưới lên trên.</li>
+        </ul>
+        <h2 class="text-xl font-bold mb-4">Justify content</h2>
+        <p class="mb-4">Căn chỉnh flex items theo main axis.</p>
+        <p class="mb-4">Có 6 giá trị:</p>
+        <ul class="list-disc list-inside mb-4">
+          <li><code>flex-start</code>: Căn main start.</li>
+          <li><code>flex-end</code>: Căn main end.</li>
+          <li><code>center</code>: Căn giữa main axis.</li>
+          <li><code>space-between</code>: Căn đều các flex items.</li>
+          <li><code>space-around</code>: Căn đều các flex items. Khoảng cách ở đầu và cuối bằng 1/2 khoảng cách giữa các
+            flex items.</li>
+          <li><code>space-evenly</code>: Căn đều các flex items. Khoảng cách ở đầu và cuối bằng khoảng cách giữa các
+            flex
+            items.</li>
+        </ul>
+        <h2 class="text-xl font-bold mb-4">Align items</h2>
+        <p class="mb-4">Căn chỉnh flex items theo cross axis.</p>
+        <p class="mb-4">Có 5 giá trị:</p>
+        <ul class="list-disc list-inside mb-4">
+          <li><code>stretch</code>: Kéo dài các phần tử con để chiếm toàn bộ chiều cao của container.</li>
+          <li><code>flex-start</code>: Điểm bắt đầu ở cross start.</li>
+          <li><code>flex-end</code>: Điểm kết thúc ở cross end.</li>
+          <li><code>center</code>: Nằm giữa cross start và cross end.</li>
+          <li><code>baseline</code>: Nằm trên đường cơ sở của văn bản.</li>
+        </ul>
+        <h2 class="text-xl font-bold mb-4">Align content</h2>
+        <p class="mb-4"><code>align-content</code> tương tự <code>justify-content</code> nhưng căn theo trục cross axis.
+        </p>
+        <p class="mb-4">Có 5 giá trị:</p>
+        <ul class="list-disc list-inside mb-4">
+          <li><code>stretch</code></li>
+          <li><code>flex-start</code></li>
+          <li><code>flex-end</code></li>
+          <li><code>center</code></li>
+          <li><code>space-around</code></li>
+          <li><code>space-evenly</code></li>
+        </ul>
 
-          <div class="tab-container text-sm space-y-2">
-            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-box-model')">Box Model</button>
-            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-size-and-position')">Size and
-              Position</button>
-            <button class="tab-button bg-gray-200 rounded-md p-2"
-              onclick="showTab('tab-typography')">Typography</button>
-            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-color-and-background')">Color
-              and background</button>
-            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-display')">Display</button>
-            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-animation')">Animation</button>
-          </div>
+        <div id="flex-demo-editor" class="editor css-editor mb-4"></div>
 
-          <div class="tab-content" id="tab-box-model">
-            <div class="custom-slider">
-              <div class="flex justify-between">
-                <label class="font-medium">Padding (px)</label>
-                <span class="font-medium display-value"></span>
-              </div>
-              <input type="range" id="padding-slider" min="0" max="48" value="16" class="w-full">
+        <div class="flex gap-4">
+          <div class="flex-1 bg-gray-100 h-64 rounded-md p-2 shadow-lg overflow-y-auto">
+
+            <div class="mb-4">
+              <label for="count-box-input" class="font-medium"><code>boxes amount (1-15): </code></label>
+              <input type="number" data-min-value="1" data-max-value="15" value="3" class="w-16" id="count-box-input">
             </div>
-            <div class="custom-slider">
-              <div class="flex justify-between">
-                <label class="font-medium">Margin (px)</label>
-                <span class="font-medium display-value"></span>
-              </div>
-              <input type="range" id="margin-slider" min="0" max="48" value="8" class="w-full">
-            </div>
-            <div class="custom-slider">
-              <div class="flex justify-between">
-                <label class="font-medium">Border radius (px)</label>
-                <span class="font-medium display-value"></span>
-              </div>
-              <input type="range" id="border-radius-slider" min="0" max="48" value="8" class="w-full">
-            </div>
-            <div class="custom-slider">
-              <div class="flex justify-between">
-                <label class="font-medium">Border width (px)</label>
-                <span class="font-medium display-value"></span>
-              </div>
-              <input type="range" id="border-width-slider" min="0" max="48" value="0" class="w-full">
-            </div>
-          </div>
-          <div class="tab-content" id="tab-typography" hidden>
-            <div class="custom-slider">
-              <div class="flex justify-between">
-                <label class="font-medium">Font-size (px)</label>
-                <span class="font-medium display-value"></span>
-              </div>
-              <input type="range" id="font-size-slider" min="0" max="20" value="12" class="w-full">
-            </div>
-            <div class="custom-slider">
-              <div class="flex justify-between">
-                <label class="font-medium">Font-weight</label>
-                <span class="font-medium display-value"></span>
-              </div>
-              <input type="range" id="font-weight-slider" min="100" max="900" value="400" step="100" class="w-full">
-            </div>
-            <div class="custom-slider">
-              <div class="flex justify-between">
-                <label class="font-medium">Line height</label>
-                <span class="font-medium display-value"></span>
-              </div>
-              <input type="range" id="line-height-slider" min="0" max="4.8" value="1.6" step="0.1" class="w-full">
-            </div>
-            <div class="custom-slider">
-              <div class="flex justify-between">
-                <label class="font-medium">Word spacing</label>
-                <span class="font-medium display-value"></span>
-              </div>
-              <input type="range" id="word-spacing-slider" min="0" max="10" value="0" class="w-full">
-            </div>
-            <div class="custom-slider">
-              <div class="flex justify-between">
-                <label class="font-medium">Letter spacing</label>
-                <span class="font-medium display-value"></span>
-              </div>
-              <input type="range" id="letter-spacing-slider" min="0" max="10" value="0" class="w-full">
-            </div>
-            <div class="custom-selector">
-              <label class="font-medium">Font family</label>
-              <select id="font-family-selector" class="w-full border border-gray-300 rounded-md p-1">
-                <option value="Arial">Arial</option>
-                <option value="Times New Roman">Times New Roman</option>
-                <option value="sans-serif">Sans-serif</option>
+            <div class="select-container">
+              <label for="flex-wrap-selector" class="font-medium"><code>flex-wrap: </code></label>
+              <select name="flex-wrap" id="flex-wrap-selector" class="mb-4 bg-gray-200 rounded-md p-2">
+                <option value="nowrap">nowrap</option>
+                <option value="wrap">wrap</option>
+                <option value="wrap-reverse">wrap-reverse</option>
               </select>
             </div>
-            <div class="custom-color-picker">
-              <label class="font-medium">Text color</label>
-              <input type="color" id="text-color-picker" class="w-full" value="#000000">
+            <div class="select-container">
+              <label for="flex-direction-selector" class="font-medium"><code>flex-direction: </code></label>
+              <select name="flex-direction" id="flex-direction-selector" class="mb-4 bg-gray-200 rounded-md p-2">
+                <option value="row">row</option>
+                <option value="row-reverse">row-reverse</option>
+                <option value="column">column</option>
+                <option value="column-reverse">column-reverse</option>
+              </select>
+            </div>
+            <div class="select-container">
+              <label for="justify-content-selector" class="font-medium"><code>justify-content: </code></label>
+              <select name="justify-content" id="justify-content-selector" class="mb-4 bg-gray-200 rounded-md p-2">
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+                <option value="space-evenly">space-evenly</option>
+              </select>
+            </div>
+            <div class="select-container">
+              <label for="align-items-selector" class="font-medium"><code>align-items: </code></label>
+              <select name="align-items" id="align-items-selector" class="mb-4 bg-gray-200 rounded-md p-2">
+                <option value="stretch">stretch</option>
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="baseline">baseline</option>
+              </select>
+            </div>
+            <div class="select-container">
+              <label for="align-content-selector" class="font-medium"><code>align-content: </code></label>
+              <select name="align-content" id="align-content-selector" class="mb-4 bg-gray-200 rounded-md p-2">
+                <option value="normal">normal</option>
+                <option value="stretch">stretch</option>
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+                <option value="space-evenly">space-evenly</option>
+              </select>
             </div>
           </div>
-
+          <div id="flex-demo" class="flex-1 p-4 mb-4 h-64 bg-gray-100 rounded-md shadow-lg self-center overflow-y-auto">
+          </div>
         </div>
-      </div>
+
+        <hr class="my-4 border-gray-300">
+      </details>
+      <!-- Common CSS Properties -->
+      <details class="mb-4" open>
+        <summary class="text-2xl font-bold mb-4" id="common-css">Common CSS Properties</summary>
+        <div class="flex gap-2 bg-gray-100 rounded-md shadow-lg">
+          <div class="p-4 flex-1">
+            <h2 class="text-xl font-bold">Property</h2>
+            <p>margin</p>
+          </div>
+          <div class="p-4 flex-1 space-y-4">
+            <h2 class="text-xl font-bold">Custom Element</h2>
+            <div class="bg-gray-200 p-4 border-gray-300" id="custom-element">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur omnis, ipsam alias illum numquam
+                provident molestias vel repellendus laudantium quia natus expedita dolorem vero odio est. Tempore
+                corporis, hic natus itaque nostrum mollitia iste numquam earum error dolorem maiores ad magni blanditiis
+                non? Officiis eum debitis distinctio vitae ducimus. Voluptas!</p>
+            </div>
+
+            <div class="tab-container text-sm space-y-2">
+              <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-box-model')">Box
+                Model</button>
+              <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-size-and-position')">Size and
+                Position</button>
+              <button class="tab-button bg-gray-200 rounded-md p-2"
+                onclick="showTab('tab-typography')">Typography</button>
+              <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-color-and-background')">Color
+                and background</button>
+              <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-display')">Display</button>
+              <button class="tab-button bg-gray-200 rounded-md p-2"
+                onclick="showTab('tab-animation')">Animation</button>
+            </div>
+
+            <div class="tab-content" id="tab-box-model">
+              <div class="custom-slider">
+                <div class="flex justify-between">
+                  <label class="font-medium">Padding (px)</label>
+                  <span class="font-medium display-value"></span>
+                </div>
+                <input type="range" id="padding-slider" min="0" max="48" value="16" class="w-full">
+              </div>
+              <div class="custom-slider">
+                <div class="flex justify-between">
+                  <label class="font-medium">Margin (px)</label>
+                  <span class="font-medium display-value"></span>
+                </div>
+                <input type="range" id="margin-slider" min="0" max="48" value="8" class="w-full">
+              </div>
+              <div class="custom-slider">
+                <div class="flex justify-between">
+                  <label class="font-medium">Border radius (px)</label>
+                  <span class="font-medium display-value"></span>
+                </div>
+                <input type="range" id="border-radius-slider" min="0" max="48" value="8" class="w-full">
+              </div>
+              <div class="custom-slider">
+                <div class="flex justify-between">
+                  <label class="font-medium">Border width (px)</label>
+                  <span class="font-medium display-value"></span>
+                </div>
+                <input type="range" id="border-width-slider" min="0" max="48" value="0" class="w-full">
+              </div>
+            </div>
+            <div class="tab-content" id="tab-typography" hidden>
+              <div class="custom-slider">
+                <div class="flex justify-between">
+                  <label class="font-medium">Font-size (px)</label>
+                  <span class="font-medium display-value"></span>
+                </div>
+                <input type="range" id="font-size-slider" min="0" max="20" value="12" class="w-full">
+              </div>
+              <div class="custom-slider">
+                <div class="flex justify-between">
+                  <label class="font-medium">Font-weight</label>
+                  <span class="font-medium display-value"></span>
+                </div>
+                <input type="range" id="font-weight-slider" min="100" max="900" value="400" step="100" class="w-full">
+              </div>
+              <div class="custom-slider">
+                <div class="flex justify-between">
+                  <label class="font-medium">Line height</label>
+                  <span class="font-medium display-value"></span>
+                </div>
+                <input type="range" id="line-height-slider" min="0" max="4.8" value="1.6" step="0.1" class="w-full">
+              </div>
+              <div class="custom-slider">
+                <div class="flex justify-between">
+                  <label class="font-medium">Word spacing</label>
+                  <span class="font-medium display-value"></span>
+                </div>
+                <input type="range" id="word-spacing-slider" min="0" max="10" value="0" class="w-full">
+              </div>
+              <div class="custom-slider">
+                <div class="flex justify-between">
+                  <label class="font-medium">Letter spacing</label>
+                  <span class="font-medium display-value"></span>
+                </div>
+                <input type="range" id="letter-spacing-slider" min="0" max="10" value="0" class="w-full">
+              </div>
+              <div class="custom-selector">
+                <label class="font-medium">Font family</label>
+                <select id="font-family-selector" class="w-full border border-gray-300 rounded-md p-1">
+                  <option value="Arial">Arial</option>
+                  <option value="Times New Roman">Times New Roman</option>
+                  <option value="sans-serif">Sans-serif</option>
+                </select>
+              </div>
+              <div class="custom-color-picker">
+                <label class="font-medium">Text color</label>
+                <input type="color" id="text-color-picker" class="w-full" value="#000000">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </details>
     </main>
   </div>
-  <script src="./static/css-note.js"></script>
-  <script src="./static/prism.js"></script>
-  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
   <script src="./static/codemirror.min.js"></script>
+  <script src="./static/xml.min.js"></script>
+  <script src="./static/css.js"></script>
+  <script src="./static/prism.js"></script>
+  <script src="./static/css-note.js"></script>
+  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
   <script>
     function showTab(tabId) {
       const tabs = document.querySelectorAll('.tab-content');

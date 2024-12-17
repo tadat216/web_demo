@@ -4,11 +4,12 @@
   align-items: center;
   color: #fff;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 16px;
   background-color: #e87674;
-  width: 48px;
-  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
   margin: 4px;
+  user-select: none;
 }
 
 .box-2{
@@ -18,10 +19,11 @@
   align-items: center;
   color: #fff;
   font-weight: bold;
-  font-size: 24px;
-  width: 48px;
-  height: 48px;
+  font-size: 16px;
+  min-width: 64px;
+  min-height: 64px;
   margin: 4px;
+  user-select: none;
 }
 
 .box-3{
@@ -31,14 +33,18 @@
   align-items: center;
   color: #fff;
   font-weight: bold;
-  font-size: 24px;
-  width: 48px;
-  height: 48px;
+  font-size: 16px;
+  min-width: 32px;
+  min-height: 32px;
   margin: 4px;
+  user-select: none;
 }
 
-#flex-items-demo{
+#flex-demo{
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
 }

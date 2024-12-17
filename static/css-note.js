@@ -1,10 +1,15 @@
-const editor = CodeMirror.fromTextArea(document.getElementById('htmlInput'), {
-  mode: 'xml',
+const flexDemoEditor = CodeMirror(document.getElementById('flex-demo-editor'), {
+  mode: 'css',
   lineNumbers: true,
   theme: 'default',
+  tabSize: 2,
+  readOnly: true,
 });
 
+flexDemoEditor.setSize(null, '100%');
+
 document.addEventListener('DOMContentLoaded', () => {
+
   const customElement = document.getElementById('custom-element');
   const links = document.querySelectorAll('aside li');
   links.forEach(link =>
@@ -80,19 +85,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const flexItemsDemo = document.getElementById('flex-items-demo');
+  const flexDemo = document.getElementById('flex-demo');
+
+  renderFlexDemo(3);
 
   function renderFlexItemsStyleCode(){
-    const flexDirection = flexItemsDemo.style.flexDirection;
-    const justifyContent = flexItemsDemo.style.justifyContent;
-    const flexItemsCode = document.getElementById('flex-items-css-code');
-    flexItemsCode.textContent = `
-      .box-container {
-        display: flex; 
-        flex-direction: ${flexDirection};
-        justify-content: ${justifyContent};
-      }
-    `;
+    const flexDirection = getComputedStyle(flexDemo).flexDirection;
+    const justifyContent = getComputedStyle(flexDemo).justifyContent;
+    const alignItems = getComputedStyle(flexDemo).alignItems;
+    const alignContent = getComputedStyle(flexDemo).alignContent;
+    const flexWrap = getComputedStyle(flexDemo).flexWrap;
+    htmlCode = `.box-container {
+  display: flex;
+  flex-wrap: ${flexWrap}; /*Chọn ít nhất 11 box để flex-wrap hoạt động*/
+  flex-direction: ${flexDirection};
+  justify-content: ${justifyContent};
+  align-items: ${alignItems};
+  align-content: ${alignContent}; /*Chọn flex-wrap: wrap; hoặc flex-wrap: wrap-reverse; để hoạt động*/
+}`;
+
+    flexDemoEditor.setValue(htmlCode);
   }
 
   renderFlexItemsStyleCode();
@@ -100,15 +112,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const flexDirectionSelector = document.getElementById('flex-direction-selector');
   flexDirectionSelector.addEventListener('change', () => {
     const flexDirection = flexDirectionSelector.value;
-    flexItemsDemo.style.display = 'flex';
-    flexItemsDemo.style.flexDirection = flexDirection;
+    flexDemo.style.display = 'flex';
+    flexDemo.style.flexDirection = flexDirection;
     renderFlexItemsStyleCode();
   });
 
   const justifyContentSelector = document.getElementById('justify-content-selector');
   justifyContentSelector.addEventListener('change', () => {
     const justifyContent = justifyContentSelector.value;
-    flexItemsDemo.style.justifyContent = justifyContent;
+    flexDemo.style.justifyContent = justifyContent;
     renderFlexItemsStyleCode();
   });
+
+  const alignItemsSelector = document.getElementById('align-items-selector');
+  alignItemsSelector.addEventListener('change', () => {
+    const alignItems = alignItemsSelector.value;
+    flexDemo.style.alignItems = alignItems;
+    renderFlexItemsStyleCode();
+  });
+
+  const alignContentSelector = document.getElementById('align-content-selector');
+  alignContentSelector.addEventListener('change', () => {
+    const alignContent = alignContentSelector.value;
+    flexDemo.style.alignContent = alignContent;
+    renderFlexItemsStyleCode();
+  });
+
+  const flexWrapSelector = document.getElementById('flex-wrap-selector');
+  flexWrapSelector.addEventListener('change', () => {
+    const flexWrap = flexWrapSelector.value;
+    flexDemo.style.flexWrap = flexWrap;
+    if(flexWrap === 'nowrap'){
+      flexDemo.style.flexDirection = 'row-reverse';
+    }else{
+      flexDemo.style.flexDirection = 'row';
+    }
+    renderFlexItemsStyleCode();
+  });
+
+  let countBoxInput = document.getElementById('count-box-input');
+  countBoxInput.addEventListener('change', () => {
+    countBoxInput.value = Math.max(countBoxInput.value, countBoxInput.getAttribute('data-min-value'));
+    countBoxInput.value = Math.min(countBoxInput.value, countBoxInput.getAttribute('data-max-value'));
+    const countBox = countBoxInput.value;
+    renderFlexDemo(countBox);   
+  });
+  function renderFlexDemo(countBox){
+    let boxPaterm = [1, 3, 2, 2, 1, 3, 3, 2 , 3, 3, 1, 2, 2, 1, 3];
+    flexDemo.innerHTML = '';
+    for(let i = 0; i < countBox; i++){
+      const box = document.createElement('div');
+      box.classList.add(`box-${boxPaterm[i]}`);
+      box.textContent = i+1;
+      flexDemo.appendChild(box);
+    }
+  }
 });
