@@ -1,3 +1,11 @@
+import CodeMirror from 'static/codemirror.min.js';
+
+const editor = CodeMirror.fromTextArea(document.getElementById('htmlInput'), {
+  mode: 'xml',
+  lineNumbers: true,
+  theme: 'default',
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const customElement = document.getElementById('custom-element');
   const links = document.querySelectorAll('aside li');
@@ -72,5 +80,37 @@ document.addEventListener('DOMContentLoaded', () => {
     for(let i = 0; i < texts.length; i++){
       texts[i].style.color = textColor;
     }
+  });
+
+  const flexItemsDemo = document.getElementById('flex-items-demo');
+
+  function renderFlexItemsStyleCode(){
+    const flexDirection = flexItemsDemo.style.flexDirection;
+    const justifyContent = flexItemsDemo.style.justifyContent;
+    const flexItemsCode = document.getElementById('flex-items-css-code');
+    flexItemsCode.textContent = `
+      .box-container {
+        display: flex; 
+        flex-direction: ${flexDirection};
+        justify-content: ${justifyContent};
+      }
+    `;
+  }
+
+  renderFlexItemsStyleCode();
+
+  const flexDirectionSelector = document.getElementById('flex-direction-selector');
+  flexDirectionSelector.addEventListener('change', () => {
+    const flexDirection = flexDirectionSelector.value;
+    flexItemsDemo.style.display = 'flex';
+    flexItemsDemo.style.flexDirection = flexDirection;
+    renderFlexItemsStyleCode();
+  });
+
+  const justifyContentSelector = document.getElementById('justify-content-selector');
+  justifyContentSelector.addEventListener('change', () => {
+    const justifyContent = justifyContentSelector.value;
+    flexItemsDemo.style.justifyContent = justifyContent;
+    renderFlexItemsStyleCode();
   });
 });

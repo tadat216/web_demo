@@ -21,9 +21,6 @@ function traverseDOM(depth=0, element, rootElement) {
   text = space + "<span style='color: green;'>" + element.tagName.toLowerCase() + "</span>";
   
   if(element.className) text += '<span style="color: blue;" class="hidden class-name">.' + element.className + '</span>';
-  // if(element.attributes) {
-  //   text += '<span style="color: blue;" class="hidden class-name">.' + element.attributes.length + '</span>';
-  // }
   const elementHTML = '<p style="line-height: 1.23;" class="hidden">' + text + '</p>';
   domOutput.innerHTML += elementHTML;
   for (let child of element.children) {
