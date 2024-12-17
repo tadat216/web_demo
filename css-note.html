@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Học CSS</title>
+  <link href="./static/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="">
+    <aside class=" bg-gray-200 h-screen p-4 fixed w-64">
+      <ul class="space-y-2 font-medium">
+        
+        <li class="text-gray-500 hover:text-black"><a href="#the-cascade">The Cascade</a></li>
+        <li class="text-gray-500 hover:text-black"><a href="#flexbox">Flexbox</a></li>
+        <li class="text-gray-500 hover:text-black"><a href="#grid">Grid</a></li>
+        <li class="text-gray-500 hover:text-black"><a href="#animation">Animation</a></li>
+        <li class="text-gray-500 hover:text-black"><a href="#transition">Transition</a></li>
+        <li class="text-gray-500 hover:text-black"><a href="#common-css">Common CSS Properties</a></li>
+      </ul>
+    </aside>
+    <main class="p-4 ml-64">
+      <h1 class="text-2xl font-bold" id="the-cascade">The cascade</h1>
+      <p class="mb-4">CSS là ghi tắt của Cascading Style Sheets. Nó là một ngôn ngữ được sử dụng để mô tả cách các phần tử HTML được hiển thị trên màn hình.</p>
+      <p class="mb-4">Cascading (dịch: xếp tầng) là quá trình mà các thuộc tính CSS được áp dụng cho các phần tử HTML. Nó xác định kiểu nào sẽ được ưu tiên cho element khi có nhiều quy tắc xung đột.</p>
+
+      <p class="codepen" data-height="300" data-theme-id="light" data-default-tab="css,result" data-slug-hash="bNbgdKB" data-pen-title="cascade example" data-preview="true" data-editable="true" data-user="pvotfthe-the-reactor" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/pvotfthe-the-reactor/pen/bNbgdKB">
+        cascade example</a> by Đạt Tạ (<a href="https://codepen.io/pvotfthe-the-reactor">@pvotfthe-the-reactor</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+
+      <h1 class="text-2xl font-bold" id="common-css">Common CSS Properties</h1>
+      <div class="flex gap-2 bg-gray-100 rounded-md shadow-lg">
+        <div class="p-4 flex-1">
+          <h2 class="text-xl font-bold">Property</h2>
+          <p>margin</p>
+        </div>
+        <div class="p-4 flex-1 space-y-4">
+          <h2 class="text-xl font-bold">Custom Element</h2>
+          <div class="bg-gray-200 p-4 border-gray-300" id="custom-element">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur omnis, ipsam alias illum numquam provident molestias vel repellendus laudantium quia natus expedita dolorem vero odio est. Tempore corporis, hic natus itaque nostrum mollitia iste numquam earum error dolorem maiores ad magni blanditiis non? Officiis eum debitis distinctio vitae ducimus. Voluptas!</p>
+          </div>
+
+          <div class="tab-container text-sm space-y-2">
+            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-box-model')">Box Model</button>
+            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-size-and-position')">Size and Position</button>
+            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-typography')">Typography</button>
+            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-color-and-background')">Color and background</button>
+            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-display')">Display</button>
+            <button class="tab-button bg-gray-200 rounded-md p-2" onclick="showTab('tab-animation')">Animation</button>
+          </div>
+
+          <div class = "tab-content" id= "tab-box-model">
+            <div class="custom-slider">
+              <div class="flex justify-between">
+                <label class="font-medium">Padding (px)</label>
+                <span class="font-medium display-value"></span>
+              </div>
+              <input type="range" id="padding-slider" min="0" max="48" value="16" class="w-full">
+            </div>
+            <div class="custom-slider">
+              <div class="flex justify-between">
+                <label class="font-medium">Margin (px)</label>
+                <span class="font-medium display-value"></span>
+              </div>
+              <input type="range" id="margin-slider" min="0" max="48" value="8" class="w-full">
+            </div>
+            <div class="custom-slider">
+              <div class="flex justify-between">
+                <label class="font-medium">Border radius (px)</label>
+                <span class="font-medium display-value"></span>
+              </div>
+              <input type="range" id="border-radius-slider" min="0" max="48" value="8" class="w-full">
+            </div>
+            <div class="custom-slider">
+              <div class="flex justify-between">
+                <label class="font-medium">Border width (px)</label>
+                <span class="font-medium display-value"></span>
+              </div>
+              <input type="range" id="border-width-slider" min="0" max="48" value="0" class="w-full">
+            </div>
+          </div>
+          <div class = "tab-content" id = "tab-typography" hidden>
+            <div class="custom-slider">
+              <div class="flex justify-between">
+                <label class="font-medium">Font-size (px)</label>
+                <span class="font-medium display-value"></span>
+              </div>
+              <input type="range" id="font-size-slider" min="0" max="20" value="12" class="w-full">
+            </div>
+            <div class="custom-slider">
+              <div class="flex justify-between">
+                <label class="font-medium">Font-weight</label>
+                <span class="font-medium display-value"></span>
+              </div>
+              <input type="range" id="font-weight-slider" min="100" max="900" value="400" step="100" class="w-full">
+            </div>
+            <div class="custom-slider">
+              <div class="flex justify-between">
+                <label class="font-medium">Line height</label>
+                <span class="font-medium display-value"></span>
+              </div>
+              <input type="range" id="line-height-slider" min="0" max="4.8" value="1.6" step="0.1" class="w-full">
+            </div>
+            <div class="custom-slider">
+              <div class="flex justify-between">
+                <label class="font-medium">Word spacing</label>
+                <span class="font-medium display-value"></span>
+              </div>
+              <input type="range" id="word-spacing-slider" min="0" max="10" value="0" class="w-full">
+            </div>
+            <div class="custom-slider">
+              <div class="flex justify-between">
+                <label class="font-medium">Letter spacing</label>
+                <span class="font-medium display-value"></span>
+              </div>
+              <input type="range" id="letter-spacing-slider" min="0" max="10" value="0" class="w-full">
+            </div>
+            <div class="custom-selector">
+              <label class="font-medium">Font family</label>
+              <select id="font-family-selector" class="w-full border border-gray-300 rounded-md p-1">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="sans-serif">Sans-serif</option>
+              </select>
+            </div>
+            <div class="custom-color-picker">
+              <label class="font-medium">Text color</label>
+              <input type="color" id="text-color-picker" class="w-full" value="#000000">
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="./static/css-note.js"></script>
+  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.hidden = true;
+      });
+      document.getElementById(tabId).hidden = false;
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(tabButton => {
+        tabButton.classList.remove('bg-blue-300');
+        tabButton.classList.add('bg-gray-200');
+      });
+      document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('bg-blue-300');
+    }
+  </script>
+</body>
+
+</html>
