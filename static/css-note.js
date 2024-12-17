@@ -1,5 +1,3 @@
-import CodeMirror from 'static/codemirror.min.js';
-
 const editor = CodeMirror.fromTextArea(document.getElementById('htmlInput'), {
   mode: 'xml',
   lineNumbers: true,
